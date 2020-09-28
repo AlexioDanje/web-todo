@@ -1,0 +1,22 @@
+<div>
+  <div class="todo-list">
+    <h4>Todo List</h4>
+    <ul>
+      <li
+          *ngFor="let todo of todos; let i = index"
+
+          (click)="setActiveTodo(todo, i)"
+      >
+        {{ todo.title }}
+      <button><a routerLink="/todos/{{ todo.id }}">
+        Edit
+      </a></button>
+        <button (click)="deleteTodo()" class="del">Delete</button>
+      </li>
+    </ul>
+
+    <button (click)="removeAllTodos()" class="rm">
+      Remove All
+    </button>
+  </div>
+</div>

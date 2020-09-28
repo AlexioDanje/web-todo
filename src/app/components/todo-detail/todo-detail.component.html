@@ -1,0 +1,25 @@
+<div class="todo-detail">
+  <div *ngIf="currentTodo">
+    <h4>Todo</h4>
+    <form>
+      <div>
+        <label>Title</label>
+        <input [(ngModel)]="currentTodo.title" name="title"/>
+      </div>
+
+      <div>
+        <label>Description</label>
+        <input [(ngModel)]="currentTodo.description" name="description"/>
+      </div>
+
+    </form>
+    <button (click)="updateTodo()" class="">Save Changes</button>
+
+
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!currentTodo">
+    <p>Cannot access this Todo...</p>
+  </div>
+</div>

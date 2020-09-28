@@ -1,0 +1,21 @@
+<div class="add-todo">
+  <div *ngIf="!submitted">
+    <div>
+      <label>Title</label>
+      <input required [(ngModel)]="todo.title" name="title"/>
+    </div>
+
+    <div>
+      <label>Description</label>
+      <input required [(ngModel)]="todo.description" name="description"/>
+    </div>
+
+    <button (click)="saveTodo()" class="">Add</button>
+  </div>
+
+  <div *ngIf="submitted">
+    <h4>Todo added successfully!</h4>
+    <button (click)="newTodo()">Add</button>
+  </div>
+</div>
+
